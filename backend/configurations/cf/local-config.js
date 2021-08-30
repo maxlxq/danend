@@ -13,7 +13,6 @@ let RedisRetry = require('../RedisRetry'),
   ///********************local environment
   mongoHost = process.env.MONGO_HOST || 'localhost',
   mongoPort = process.env.MONGO_PORT || '27017',
-  // redisHost = process.env.REDIS_HOST || 'r-1ud31cle8xqptpsvxlpd.redis.rds.aliyuncs.com',
   redisHost = process.env.REDIS_HOST || 'localhost',
   redisPort = process.env.REDIS_PORT || '6379'
 
@@ -26,12 +25,8 @@ module.exports = function () {
     },
     mongodb: {
       //***************local
-      // p8security: process.env.MONGO_P8SECURITY || `mongodb://${mongoHost}:${mongoPort}/danSecurity`,
       danCommon: process.env.MONGO_P8COMMON || `mongodb://${mongoHost}:${mongoPort}/danCommon`,
       danLog: process.env.MONGO_P8LOG || `mongodb://${mongoHost}:${mongoPort}/danLog`,
-      // p8feed: process.env.MONGO_P8FEED || `mongodb://${mongoHost}:${mongoPort}/danFeed`,
-      // p8edu: process.env.MONGO_P8EDU || `mongodb://${mongoHost}:${mongoPort}/danEdu`,
-      // p8finance: process.env.MONGO_P8FINANCE || `mongodb://${mongoHost}:${mongoPort}/danFinance`,
       winstonlog: {
         host: process.env.MONGO_P8LOG_HOST || mongoHost,
         port: process.env.MONGO_P8LOG_PORT || mongoPort,
@@ -49,7 +44,7 @@ module.exports = function () {
       }
     },
     protocol: 'http:',
-    mblUrl: `//${mobileHost}:${mobilePort}/`, //mobile server
+    mblUrl: `//${mobileHost}:${mobilePort}/`,
     SearchDatabase: process.env.SEARCH_DB || 'MongoDB',
   }
 }

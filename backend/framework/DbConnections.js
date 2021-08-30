@@ -1,7 +1,6 @@
 
 let mongoose = require('mongoose'),
   config = require('../configurations/config.js'),
-  fs = require('fs'),
   DbConnections = {},
   dbs = ['danCommon', 'danLog'],
   replicaSets = {
