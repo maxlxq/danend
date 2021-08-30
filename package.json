@@ -1,0 +1,20 @@
+{
+  "name": "danend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "向前Hell <542168513@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^3.2.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "mongoose": "^6.0.2",
+    "multer": "^1.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
