@@ -34,16 +34,16 @@ const getUser = async params => {
       },
     },
     update,
-    user
+    user = await SchemaPack.User.findOne(filter).exec()
+
   if (params.ActionType === UserEnums.ActionType.Login) {
     update = {
       $set: {
         LastLoginTime: Date.now()
       }
     }
+    await updateUser(filter, update)
   }
-  user = await SchemaPack.User.findOne(filter).exec()
-  await updateUser(filter, update)
   return user
 }
 
