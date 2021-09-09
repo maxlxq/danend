@@ -8,15 +8,17 @@ const registerUserByPassword = async params => {
 }
 
 const register = async params => {
-  let user = await userProcessor.GetUser(params),
-    hashPwd
+  let user = await userProcessor.GetUser(params)
   if (user) {
     throw 'usr.bll.uae'
   }
-  hashPwd = await CryptoHelper.GenerateHash(params.Password)
+  const {
+    salt, hash
+  } = await CryptoHelper.GenerateHashAndSalt(params.Password)
   return await registerUserByPassword({
     UserName: params.UserName,
-    Password: hashPwd,
+    Password: hash,
+    PasswordSalt: salt,
     ActionType: UserEnums.ActionType.Register,
   })
 }

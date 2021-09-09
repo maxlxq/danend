@@ -6,12 +6,13 @@ let DanSchema = require('../framework/DanSchema.js'),
   ConstantEnums = require('../enums/ConstantEnums.js'),
   props = () => {
     return {
-        UserName: {type: String},
-        Password: {type: String},
-        Status: {type: String, enum: Object.keys(UserEnums.UserStatus), default: UserEnums.UserStatus.Registered},
-        LastLoginTime: {type: Number},
-        RegisterDate: {type: Number},
-      }
+      UserName: {type: String},
+      Password: {type: String},
+      PasswordSalt: {type: String},
+      Status: {type: String, enum: Object.keys(UserEnums.UserStatus), default: UserEnums.UserStatus.Registered},
+      LastLoginTime: {type: Number},
+      RegisterDate: {type: Number},
+    }
   },
   UserSchema = new DanSchema(props())
 
