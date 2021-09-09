@@ -62,7 +62,7 @@ const parallel = middlewares => {
 // SERVER_TYPE=mbl PORT=8886 nodemon server.js
 serverFactory.mbl = gateway => {
   app.get('/mbl/:ServiceName/:MethodName', gateway.ProcessMobileRequest)
-  app.post('/mbl/:ServiceName/:MethodName', upload.any(), serviceGateway.ProcessMobileRequest)
+  app.post('/mbl/:ServiceName/:MethodName', upload.any(), gateway.ProcessMobileRequest)
 }
 
 DbConnections.init(function () {

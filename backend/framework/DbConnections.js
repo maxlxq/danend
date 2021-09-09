@@ -2,10 +2,11 @@
 let mongoose = require('mongoose'),
   config = require('../configurations/config.js'),
   DbConnections = {},
-  dbs = ['danCommon', 'danLog'],
+  dbs = ['danCommon', 'danLog', 'danSecurity'],
   replicaSets = {
     danCommon: config.mongodb.replica,
     danLog: config.mongodb.replica,
+    danSecurity: config.mongodb.replica,
   },
   options = {}
 

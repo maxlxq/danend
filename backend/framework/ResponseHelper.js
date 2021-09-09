@@ -66,7 +66,24 @@ const sendError = (res, error, languageIndex) => {
   res.send(myTranslationKeys[str] || str)
 }
 
+function getIPAddress(request) {
+  let retVal = "",
+    headers = 'headers',
+    socket = 'socket',
+    remoteAddress = 'remoteAddress'
+
+  if (request[headers]?.["x-forwarded-for"]) {
+    retVal = request[headers]["x-forwarded-for"]
+  } else if (request[socket]?.[remoteAddress]) {
+    retVal = request[socket][remoteAddress]
+  } else if (request[socket]?.[socket]?.[remoteAddress]) {
+    retVal = request[socket][socket][remoteAddress]
+  }
+  return retVal
+}
+
 module.exports = {
   SendData: sendData,
   SendError: sendError,
+  GetIPAddress: getIPAddress,
 }

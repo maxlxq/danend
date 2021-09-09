@@ -27,6 +27,7 @@ module.exports = function () {
       //***************local
       danCommon: process.env.MONGO_P8COMMON || `mongodb://${mongoHost}:${mongoPort}/danCommon`,
       danLog: process.env.MONGO_P8LOG || `mongodb://${mongoHost}:${mongoPort}/danLog`,
+      danSecurity: process.env.MONGO_P8LOG || `mongodb://${mongoHost}:${mongoPort}/danSecurity`,
       winstonlog: {
         host: process.env.MONGO_P8LOG_HOST || mongoHost,
         port: process.env.MONGO_P8LOG_PORT || mongoPort,

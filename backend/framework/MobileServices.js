@@ -1,4 +1,4 @@
 
 module.exports = {
-  Feedback: require("../mobile/FeedbackService.js"),
+  User: require("../mobile/UserService.js"),
 }

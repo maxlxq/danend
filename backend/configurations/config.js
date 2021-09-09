@@ -4,7 +4,7 @@ let environment = process.env.BUILD_ENV || 'local',
     path: __dirname.replace('/backend/configurations', '')
   }),
   RedisRetry = require('./RedisRetry'),
-  databases = ['danCommon', 'danLog'],
+  databases = ['danCommon', 'danLog', 'danSecurity'],
   primary = process.env.REPLICA_PRIMARY || 'a0',
   secondary = process.env.REPLICA_SECONDARY || 'a1',
   primaryB = process.env.REPLICA_PRIMARY_B || 'a0',
